@@ -1,0 +1,20 @@
+Para a personalização do dominó será necessário criar novas classes e métodos que serão descritos a seguir.
+
+	- Construtor em Jogo.java no pacote ufcg.ccc.domino:
+		Ao invés de chamar o método criaPecas para criar as peças do jogo, o o objeto Jogo recebe pelo seu construtor a classe CriaDominoPersonalizado
+		que vai criar e retornar as peças a serem utilizadas no jogo. Nele serão invocados métodos para que as peças sejam criadas.
+		O tipo de personalização das peças será de escolha do usuário.
+		
+	- CriaDominoPersonalizado em ufcg.ccc.domino:
+		A classe vai criar o dominó com pecas personalizadas de acordo com a escolha do usuário(será recebido como parâmetro por um dos construtores)
+		e vai retornar uma lista com as peças criadas. Será possível escolher personalizar peças com emojinó, números primos (1, 2, 3, 5, 7, 11), 
+		formados pela sequência de fibonacci (1, 1, 2, 3, 5, 8), por potências (1, 2, 4, 8, 16, 32) ou sem carroções. Assim de acordo com a escolha do usuário
+		um método especifico será chamado para que essas peças personalizadas sejam criadas. Caso a personalização escolhida seja numérica(não seja emojinó) será criada
+		uma lista com os números possiveis e um for vai ser responsável por criar as peças.
+	
+	- Peca em ufcg.ccc.domino:
+		A classe vai apresentar como novo atributo um hashMap com a equivalência númerica de cada emoji(para caso seja escolhido criar um emojino) 
+		para que o acesso à equivalência numéricaseja mais rápido. Além disso vai apresentar os métodos getValorEsquerdo(), getValorDireito(), que retornam 
+		os valores numéricos correspondente a cada lado e encaixaEmojino(int emoji), que verifica se a peça encaixa no emoji. Quando for necessária alguma operação 
+		que requeira o valor númerico correspondente de um emoji na peça esse valor será buscado no hashMap.
+	

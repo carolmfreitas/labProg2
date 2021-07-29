@@ -1,0 +1,65 @@
+Main
+association RegistroTempoOnline
+association Disciplina
+association RegistroFinancas
+association Saude
+---
+---
+---
+
+RegistroTempoOnline
+---
+- nomeDisciplina: string
+- tempoOnlineEsperado: int
+- tempoGasto: int
+---
++ RegistroTempoOnline(nomeDisciplina: string) //construtor
++ RegistroTempoOnline(nomeDisciplina: string, tempoOnlineEsperado: int) //construtor
++ adicionaTempoOnline(tempo: int): void //método
++ atingiuMetaTempoOnline(): boolean //método
++ toString(): string //método-deve gerar uma String que o representa contendo: nome da disciplina, o tempo online já usado e o tempo online esperado.
+---
+
+
+Disciplina
+---
+- nomeDisciplina: string
+- horasEstudo: int
+- arrayNotas[4]: double
+---
++ Disciplina(nomeDisciplina: string) //construtor
++ cadastraHoras(horas: int): void  //método
++ cadastraNota(nota: int, valorNota: double): void //método notas possíveis: 1, 2, 3 e 4
++ getSomaNotas(): double
++ double getMedia(): double
++ aprovado(): boolean //método
++ toString(): string //método
+---
+
+
+RegistroFinancas
+---
+- receita: int
+- receitaTotal: int
+- despesa: int
+- fontesRenda[4]: int
+---
++ RegistroFinancas(receitaInicialDoTipo1: int) //construtor
++ aumentaReceita(valorCentavos: int, tipoFonte: int): void //tipo fonte pode ser 1,2,3,4
++ pagaDespesa(valorCentavos: int): void
++ exibeFontes(): string
++ toString(): string
+---
+
+
+Saude
+---
+- saudeFisica: String
+- saudeMental: String
+---
++ Saude() //construtor inicial sem parâmetros e que irá definir a saúde mental e a saúde 
+//física do aluno como “boa”
++ defineSaudeMental(valor: string): void
++ defineSaudeFisica(valor: string): void
++ getStatusGeral(): string
+---
